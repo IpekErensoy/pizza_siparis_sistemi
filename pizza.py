@@ -1,0 +1,190 @@
+from PyQt4 import QtCore, QtGui
+import sqlite3
+from tkinter import messagebox
+
+
+try:
+    _fromUtf8 = QtCore.QString.fromUtf8
+except AttributeError:
+    def _fromUtf8(s):
+        return s
+
+try:
+    _encoding = QtGui.QApplication.UnicodeUTF8
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig, _encoding)
+except AttributeError:
+    def _translate(context, text, disambig):
+        return QtGui.QApplication.translate(context, text, disambig)
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName(_fromUtf8("Dialog"))
+        Dialog.resize(1092, 750)
+        self.label = QtGui.QLabel(Dialog)
+        self.label.setGeometry(QtCore.QRect(-20, -20, 1131, 771))
+        self.label.setAutoFillBackground(True)
+        self.label.setText(_fromUtf8(""))
+        self.label.setPixmap(QtGui.QPixmap(_fromUtf8("hhhHero_location.jpg")))
+        self.label.setObjectName(_fromUtf8("label"))
+        self.label_2 = QtGui.QLabel(Dialog)
+        self.label_2.setGeometry(QtCore.QRect(120, 140, 391, 91))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setUnderline(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setAcceptDrops(False)
+        self.label_2.setAutoFillBackground(False)
+        self.label_2.setWordWrap(False)
+        self.label_2.setObjectName(_fromUtf8("label_2"))
+        self.label_3 = QtGui.QLabel(Dialog)
+        self.label_3.setGeometry(QtCore.QRect(120, 230, 391, 91))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setUnderline(True)
+        font.setWeight(75)
+        self.label_3.setFont(font)
+        self.label_3.setAutoFillBackground(False)
+        self.label_3.setWordWrap(False)
+        self.label_3.setObjectName(_fromUtf8("label_3"))
+        self.label_4 = QtGui.QLabel(Dialog)
+        self.label_4.setGeometry(QtCore.QRect(120, 320, 391, 91))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setUnderline(True)
+        font.setWeight(75)
+        self.label_4.setFont(font)
+        self.label_4.setAutoFillBackground(False)
+        self.label_4.setWordWrap(False)
+        self.label_4.setObjectName(_fromUtf8("label_4"))
+        self.label_5 = QtGui.QLabel(Dialog)
+        self.label_5.setGeometry(QtCore.QRect(120, 410, 391, 91))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setUnderline(True)
+        font.setWeight(75)
+        self.label_5.setFont(font)
+        self.label_5.setAutoFillBackground(False)
+        self.label_5.setWordWrap(False)
+        self.label_5.setObjectName(_fromUtf8("label_5"))
+        self.comboBox = QtGui.QComboBox(Dialog)
+        self.comboBox.setGeometry(QtCore.QRect(570, 160, 401, 41))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(10)
+        self.comboBox.setFont(font)
+        self.comboBox.setObjectName(_fromUtf8("comboBox"))
+        self.comboBox.addItem(_fromUtf8(""))
+        self.comboBox.addItem(_fromUtf8(""))
+        self.comboBox.addItem(_fromUtf8(""))
+        self.comboBox.addItem(_fromUtf8(""))
+        self.comboBox.addItem(_fromUtf8(""))
+        self.comboBox.addItem(_fromUtf8(""))
+        self.comboBox_2 = QtGui.QComboBox(Dialog)
+        self.comboBox_2.setGeometry(QtCore.QRect(570, 250, 401, 41))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(10)
+        self.comboBox_2.setFont(font)
+        self.comboBox_2.setObjectName(_fromUtf8("comboBox_2"))
+        self.comboBox_2.addItem(_fromUtf8(""))
+        self.comboBox_2.addItem(_fromUtf8(""))
+        self.comboBox_2.addItem(_fromUtf8(""))
+        self.comboBox_3 = QtGui.QComboBox(Dialog)
+        self.comboBox_3.setGeometry(QtCore.QRect(570, 350, 401, 41))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(10)
+        self.comboBox_3.setFont(font)
+        self.comboBox_3.setObjectName(_fromUtf8("comboBox_3"))
+        self.comboBox_3.addItem(_fromUtf8(""))
+        self.comboBox_3.addItem(_fromUtf8(""))
+        self.comboBox_3.addItem(_fromUtf8(""))
+        self.comboBox_4 = QtGui.QComboBox(Dialog)
+        self.comboBox_4.setGeometry(QtCore.QRect(570, 440, 401, 41))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(10)
+        self.comboBox_4.setFont(font)
+        self.comboBox_4.setObjectName(_fromUtf8("comboBox_4"))
+        self.comboBox_4.addItem(_fromUtf8(""))
+        self.comboBox_4.addItem(_fromUtf8(""))
+        self.comboBox_4.addItem(_fromUtf8(""))
+        self.comboBox_4.addItem(_fromUtf8(""))
+        self.comboBox_4.addItem(_fromUtf8(""))
+        self.comboBox_4.addItem(_fromUtf8(""))
+        self.pushButton = QtGui.QPushButton(Dialog)
+        self.pushButton.setGeometry(QtCore.QRect(760, 560, 211, 51))
+        font = QtGui.QFont()
+        font.setFamily(_fromUtf8("Century Schoolbook"))
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName(_fromUtf8("pushButton"))
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
+        self.label_2.setText(_translate("Dialog", "Pizza seçimi yapınız:", None))
+        self.label_3.setText(_translate("Dialog", "Boyutunu seçiniz:", None))
+        self.label_4.setText(_translate("Dialog", "Kenar kalınlığı seçiniz:", None))
+        self.label_5.setText(_translate("Dialog", "İçeceğinizi seçiniz:", None))
+        self.comboBox.setItemText(0, _translate("Dialog", "Margarita Pizza", None))
+        self.comboBox.setItemText(1, _translate("Dialog", "Sucuklu Pizza", None))
+        self.comboBox.setItemText(2, _translate("Dialog", "Tavuk Sezar Pizza", None))
+        self.comboBox.setItemText(3, _translate("Dialog", "Ton Balıklı Pizza", None))
+        self.comboBox.setItemText(4, _translate("Dialog", "4 Peynirli Pizza", None))
+        self.comboBox.setItemText(5, _translate("Dialog", "Karışık Pizza", None))
+        self.comboBox_2.setItemText(0, _translate("Dialog", "Küçük Boy", None))
+        self.comboBox_2.setItemText(1, _translate("Dialog", "Orta Boy", None))
+        self.comboBox_2.setItemText(2, _translate("Dialog", "Büyük Boy", None))
+        self.comboBox_3.setItemText(0, _translate("Dialog", "İnce Kenar", None))
+        self.comboBox_3.setItemText(1, _translate("Dialog", "Normal Kenar", None))
+        self.comboBox_3.setItemText(2, _translate("Dialog", "Kalın Kenar", None))
+        self.comboBox_4.setItemText(0, _translate("Dialog", "Coca Cola", None))
+        self.comboBox_4.setItemText(1, _translate("Dialog", "Fanta", None))
+        self.comboBox_4.setItemText(2, _translate("Dialog", "Sprite", None))
+        self.comboBox_4.setItemText(3, _translate("Dialog", "Yedigün", None))
+        self.comboBox_4.setItemText(4, _translate("Dialog", "İce Tea Şeftali", None))
+        self.comboBox_4.setItemText(5, _translate("Dialog", "Ice Tea Limon", None))
+        self.pushButton.setText(_translate("Dialog", "Sipariş Gönder", None))
+
+        QtCore.QObject.connect(self.pushButton, QtCore.SIGNAL("clicked()"), self.kaydet)
+
+
+
+    def kaydet(self):
+
+        baglanti=sqlite3.connect('pizza.db')
+        baglanti.row_factory=sqlite3.Row
+        isaretci=baglanti.cursor()
+        isaretci.execute("INSERT INTO siparis (pizza,boyut,kenar,icecek) VALUES(?,?,?,?)",(self.comboBox.currentText(),self.comboBox_2.currentText(),self.comboBox_3.currentText(),self.comboBox_4.currentText()))
+        baglanti.commit()
+        baglanti.close()
+
+        messagebox.showinfo("Sipariş","Siparişiniz alındı.")
+
+
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    Dialog = QtGui.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
+
