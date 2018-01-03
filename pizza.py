@@ -25,7 +25,7 @@ class Ui_Dialog(object):
         self.label.setGeometry(QtCore.QRect(-20, -20, 1131, 771))
         self.label.setAutoFillBackground(True)
         self.label.setText(_fromUtf8(""))
-        self.label.setPixmap(QtGui.QPixmap(_fromUtf8("hhhHero_location.jpg")))
+        self.label.setPixmap(QtGui.QPixmap(_fromUtf8("arkaplan.jpg")))
         self.label.setObjectName(_fromUtf8("label"))
         self.label_2 = QtGui.QLabel(Dialog)
         self.label_2.setGeometry(QtCore.QRect(120, 140, 391, 91))
